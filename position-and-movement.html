@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Position and Movement — PhysicsLearn</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Physics<span>Learn</span></a>
+      <div class="skill-search" role="search">
+        <div class="skill-search__field">
+          <svg class="skill-search__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+          <label class="visually-hidden" for="skillSearch">Search topics</label>
+          <input id="skillSearch" type="search" placeholder="Search topics…  (press / )" autocomplete="off" spellcheck="false" aria-describedby="skillSearchStatus">
+          <button id="skillSearchClear" class="skill-search__clear" type="button" hidden aria-label="Clear search">&times;</button>
+          <div id="searchResults" class="search-results" hidden></div>
+        </div>
+        <p id="skillSearchStatus" class="skill-search__status" role="status" aria-live="polite"></p>
+      </div>
+      <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav"><ul class="nav-links" id="main-menu"></ul></nav>
+    </div>
+  </header>
+
+  <section class="skill-page">
+    <div class="container">
+      <h2>Chapter 9: Position and Movement</h2>
+      <p class="section-subtitle">Scalars and vectors, motion graphs, equations of motion and free fall. Key points are summarised below, followed by worked examples with full solutions and the original scanned notes.</p>
+      <div class="part-nav">
+        <a class="part-btn" href="#part-notes">Revision Notes</a>
+        <a class="part-btn" href="#part-examples">Worked Examples</a>
+        <a class="part-btn" href="#part-scans">Original Notes</a>
+      </div>
+      <h2 class="part-heading" id="part-notes">Revision Notes</h2>
+      <div class="skill-grid">
+      <article class="skill-card" id="s9-1">
+        <h3>9.1 Scalar and vector</h3>
+        <ul class="key-points"><li>A scalar has magnitude only (distance, speed, mass, density). A vector has magnitude and direction (displacement, velocity, acceleration, force).</li><li>Adding vectors gives a resultant. Parallel vectors in the same direction add; in opposite directions they subtract. Non-parallel vectors use the tip-to-tail method.</li></ul>
+        <p class="notes-link"><a class="see-notes" href="#page-1">View notes p.1</a></p>
+      </article>
+      <article class="skill-card" id="s9-2">
+        <h3>9.2 Distance and displacement</h3>
+        <ul class="key-points"><li>Distance is the length of the path taken (scalar). Displacement is the shortest distance from the start to the final position (vector) and does not depend on the path.</li><li>Both have the SI unit metre (m).</li></ul>
+        <p class="notes-link"><a class="see-notes" href="#page-1">View notes p.1</a></p>
+      </article>
+      <article class="skill-card" id="s9-3">
+        <h3>9.3 Speed and velocity</h3>
+        <ul class="key-points"><li>Speed = distance travelled per unit time. Velocity = displacement per unit time. Unit: m s⁻¹.</li><li>Average speed = total distance ÷ time taken. Average velocity = total displacement ÷ time taken.</li><li>Change in velocity Δv = v − u, found by vector subtraction.</li></ul>
+        <p class="notes-link"><a class="see-notes" href="#page-2">View notes p.2</a></p>
+      </article>
+      <article class="skill-card" id="s9-4">
+        <h3>9.4 Uniform motion</h3>
+        <ul class="key-points"><li>An object is in uniform motion when it travels with constant velocity: both its speed and its direction stay unchanged.</li></ul>
+        <p class="notes-link"><a class="see-notes" href="#page-2">View notes p.2</a></p>
+      </article>
+      <article class="skill-card" id="s9-5">
+        <h3>9.5 Acceleration</h3>
+        <ul class="key-points"><li>Acceleration is the rate of change of velocity: a = (v − u) ÷ t. It is a vector with unit m s⁻², and its direction is shown by the sign + or −.</li><li>An object accelerates when its speed and/or its direction changes.</li></ul>
+        <p class="notes-link"><a class="see-notes" href="#page-2">View notes p.2</a></p>
+      </article>
+      <article class="skill-card" id="s9-6">
+        <h3>9.6 Motion graphs</h3>
+        <ul class="key-points"><li>Slope of an s-t graph = velocity. Slope of a v-t graph = acceleration. Area under a v-t graph = displacement. Area under an a-t graph = change in velocity.</li><li>Uniform motion: s-t is a straight line and v-t is horizontal. Uniform acceleration: s-t is a curve, v-t is a sloping straight line and a-t is horizontal.</li></ul>
+        <p class="notes-link"><a class="see-notes" href="#page-3">View notes p.3</a> <a class="see-notes" href="#page-4">View notes p.4</a></p>
+      </article>
+      <article class="skill-card" id="s9-7">
+        <h3>9.7 Equations of uniformly accelerated motion</h3>
+        <ul class="key-points"><li>v = u + at     s = ½(u + v)t     s = ut + ½at²     v² = u² + 2as</li><li>These apply only to straight-line motion with constant acceleration.</li><li>Over a time interval, average velocity equals the instantaneous velocity at the middle of the interval.</li></ul>
+        <p class="notes-link"><a class="see-notes" href="#page-5">View notes p.5</a></p>
+      </article>
+      <article class="skill-card" id="s9-8">
+        <h3>9.8 Vertical motion in air</h3>
+        <ul class="key-points"><li>Under gravity only, an object accelerates towards the Earth at g ≈ 9.81 m s⁻². Motion going up and coming down is symmetric: equal times between two heights and equal speed at the same height.</li><li>Air resistance opposes motion and grows with speed, so acceleration decreases. When weight equals air resistance, acceleration is zero and the object falls at its terminal velocity.</li></ul>
+        <p class="notes-link"><a class="see-notes" href="#page-5">View notes p.5</a> <a class="see-notes" href="#page-6">View notes p.6</a> <a class="see-notes" href="#page-7">View notes p.7</a></p>
+      </article>
+      <article class="skill-card" id="s9-9">
+        <h3>9.9 Devices used for recording motion</h3>
+        <ul class="key-points"><li>A data-logging system has an interface, computer software and sensors (e.g. a motion sensor). It measures very short time changes accurately and plots s-t, v-t and a-t graphs.</li><li>Stroboscopy uses flashes of adjustable frequency f to record images on one photo. The time between images is 1/f, and each image's distance from the first is the displacement.</li></ul>
+        <p class="notes-link"><a class="see-notes" href="#page-7">View notes p.7</a> <a class="see-notes" href="#page-8">View notes p.8</a></p>
+      </article>
+      </div>
+      <h2 class="part-heading" id="part-examples">Worked Examples</h2>
+      <div class="skill-grid">
+      <article class="skill-card example-card" id="ex1">
+        <h3>Example 1: Projectile up a smooth incline</h3>
+        <p>An object is projected up a smooth inclined plane from X (Fig. 9.11). The length of the plane is L. When the object reaches the top Z, its velocity is zero. If the object takes time t to reach Y, which is 0.75L away from X, find the time taken to travel from Y to Z.</p><p>A. 0.5t     B. t     C. 1.5t     D. 2t</p><p class="example-answer"><strong>Answer: B</strong></p><h4>Method 1: General approach</h4><div class="math-block"><span class="math-line">Let t′ be the time taken from Y to Z.   L_XY = 0.75L ......(1)</span><span class="math-line">X to Z, using v² = u² + 2as:   0 = v₁² − 2aL, so L = v₁² ÷ 2a ......(2)</span><span class="math-line">X to Y:   v₂² = v₁² − 2aL_XY ......(3)</span><span class="math-line">Put (2) into (1):   L_XY = 0.75v₁² ÷ 2a ......(4)</span><span class="math-line">Put (4) into (3):   v₂² = v₁² − 0.75v₁² = 0.25v₁², so v₂ = 0.5v₁ and v₁ = 2v₂ ......(5)</span><span class="math-line">Using v = u + at, X to Y:   v₂ = v₁ − at ......(6)</span><span class="math-line">Y to Z:   0 = v₂ − at′ ......(7)</span><span class="math-line">Put (5) into (6):   v₂ = 2v₂ − at, so v₂ = at ......(8)</span><span class="math-line">Put (8) into (7):   t′ = t</span></div><h4>Method 2: Reverse thinking</h4><div class="math-block"><span class="math-line">The object slides down from Z to X. Let t_total be the time from Z to X and t′ the time from Z to Y.</span><span class="math-line">Using s = ut + ½at², Z to X:   L = ½at_total² ......(i)</span><span class="math-line">Z to Y:   0.25L = ½at′², so L = 2at′² ......(ii)</span><span class="math-line">From (i) and (ii):   ½at_total² = 2at′², so t_total = 2t′</span><span class="math-line">Since t_total = t + t′:   t + t′ = 2t′, so t′ = t</span></div>
+        <p class="notes-link"><a class="see-notes" href="#page-9">Original solution p.9</a></p>
+      </article>
+      <article class="skill-card example-card" id="ex2">
+        <h3>Example 2: Ball thrown vertically upwards</h3>
+        <p>A ball is thrown vertically upwards from the ground (Fig. 9.12). It passes point P, of height h, going upwards and again going downwards. If the ball passes P twice in a time interval of T, find the initial velocity of the ball. Take upward motion as positive.</p><p>A. √(2gh + g²T²/4)     B. √(gh + g²T²)     C. √(4gh + 3g²T²/4)     D. √(8gh + 4g²T²)</p><p class="example-answer"><strong>Answer: A</strong></p><h4>Method 1: General approach</h4><div class="math-block"><span class="math-line">The options contain h, g and T, so use a formula with u, s, a and t: s = ut + ½at².</span><span class="math-line">The ball passes P twice, so there are two values of t:   h = ut − ½gt², i.e. gt² − 2ut + 2h = 0</span><span class="math-line">t = [2u ± √(4u² − 8gh)] ÷ 2g</span><span class="math-line">The smaller t is on the way up and the larger t is on the way down. Their difference is T:</span><span class="math-line">T = [2u + √(4u² − 8gh)] ÷ 2g − [2u − √(4u² − 8gh)] ÷ 2g = √(4u² − 8gh) ÷ g</span><span class="math-line">Rearranging:   u = √(2gh + g²T²/4)</span></div><h4>Method 2: Symmetric analysis</h4><div class="math-block"><span class="math-line">By symmetry, the ball takes T/2 to travel from P to the highest point. Let v_P be its velocity at P.</span><span class="math-line">Using v = u + at:   0 = v_P − gT/2, so v_P = gT/2 ......(i)</span><span class="math-line">Using v² = u² + 2as:   v_P² = u² − 2gh ......(ii)</span><span class="math-line">Put (i) into (ii):   (gT/2)² = u² − 2gh, so u = √(2gh + g²T²/4)</span></div>
+        <p class="notes-link"><a class="see-notes" href="#page-10">Original solution p.10</a></p>
+      </article>
+      <article class="skill-card example-card" id="ex3">
+        <h3>Example 3: Journey of a ship</h3>
+        <p>A ship moves at 10 m s⁻¹ due east for 30 minutes, then at 14 m s⁻¹ due south for 15 minutes (Fig. 9.13).</p><p>(a) Find the total distance travelled and the displacement of the ship. (3 marks)</p><p>(b) Find the average speed and the average velocity for the whole journey. (3 marks)</p><h4>Solution (a)</h4><div class="math-block"><span class="math-line">Total distance = (10)(60 × 30) + (14)(60 × 15) = 30.6 km</span><span class="math-line">Displacement = √[(10 × 60 × 30)² + (14 × 60 × 15)²] = 22.0 km</span><span class="math-line">tan θ = (14 × 60 × 15) ÷ (10 × 60 × 30), so θ = 35.0°</span><span class="math-line">The total displacement is 22.0 km at S55.0°E.</span></div><h4>Solution (b)</h4><div class="math-block"><span class="math-line">Average speed = total distance ÷ time taken = 30600 ÷ [(60)(30) + (60)(15)] = 11.3 m s⁻¹</span><span class="math-line">Average velocity = total displacement ÷ time taken = 22000 ÷ [(60)(30) + (60)(15)] = 8.15 m s⁻¹</span><span class="math-line">The average velocity is 8.15 m s⁻¹ at S55.0°E.</span><span class="math-line">Note: displacement and average velocity are vectors, so the direction must be specified.</span></div>
+        <p class="notes-link"><a class="see-notes" href="#page-11">Original solution p.11</a></p>
+      </article>
+      <article class="skill-card example-card" id="ex4">
+        <h3>Example 4: Displacement-time graph</h3>
+        <p>The displacement-time graph of an object is shown in Fig. 9.14: a straight line from 0 m at t = 0 to 27 m at t = 4 s, then a straight line down to 15 m at t = 7 s.</p><p>(a) Find the total distance travelled and the displacement of the object. (2 marks)</p><p>(b) Find the slope of the graph from (i) t = 0 s to t = 4 s, and (ii) t = 4 s to t = 7 s. (1 mark each)</p><p>(c) Describe the motion of the object. (2 marks)</p><p>(d) Sketch the velocity-time graph of the object. (2 marks)</p><h4>Solution</h4><div class="math-block"><span class="math-line">(a) Total distance = 27 + (27 − 15) = 39 m.   Displacement = 15 m (the final position).</span><span class="math-line">(b)(i) Slope = (27 − 0) ÷ 4 = 6.75 m s⁻¹</span><span class="math-line">(b)(ii) Slope = (15 − 27) ÷ 3 = −4 m s⁻¹</span><span class="math-line">(c) In the first 4 s the object moves forwards with a uniform velocity of 6.75 m s⁻¹. In the last 3 s it moves backwards with a uniform velocity of −4 m s⁻¹.</span><span class="math-line">(d) The v-t graph is a horizontal line at 6.75 m s⁻¹ from t = 0 to 4 s, then a horizontal line at −4 m s⁻¹ from t = 4 s to 7 s (see the original page for the sketch).</span></div>
+        <p class="notes-link"><a class="see-notes" href="#page-12">Original solution p.12</a></p>
+      </article>
+      <article class="skill-card example-card" id="ex5">
+        <h3>Example 5: Velocity-time graph from a platform</h3>
+        <p>An object is projected upwards from a platform and reaches the ground after 8 s. Fig. 9.15 shows its velocity-time graph from the instant of release: velocity starts at 20 m s⁻¹, falls in a straight line through zero at t = 2 s, and continues to the ground at t = 8 s. The area from t = 0 to 2 s is shaded.</p><p>Note: the object moves upwards at first, so upwards is taken as positive.</p><p>(a) Find the velocity of the object when it reaches the ground. (2 marks)</p><p>(b) State the physical meaning of the shaded area. (2 marks)</p><p>(c) Find the height of the object above the ground when it is projected. (3 marks)</p><p>(d) Someone says the acceleration is zero at t = 2 s. Do you agree? Explain. (2 marks)</p><h4>Solution</h4><div class="math-block"><span class="math-line">(a) By similar triangles, 20 ÷ 2 = x ÷ (8 − 2), so x = 60. The velocity on reaching the ground is −60 m s⁻¹.</span><span class="math-line">(b) The shaded area is the displacement of the object during its upward motion.</span><span class="math-line">(c) Height = (area of the graph below the time axis) − (area of the shaded region)</span><span class="math-line">      = ½(60)(6) − ½(20)(2) = 160 m</span><span class="math-line">(d) I do not agree. The acceleration at t = 2 s equals the slope of the tangent to the v-t graph at that instant, which is not zero. (The acceleration due to gravity is constant throughout the journey.)</span></div>
+        <p class="notes-link"><a class="see-notes" href="#page-13">Original solution p.13</a></p>
+      </article>
+      </div>
+      <h2 class="part-heading" id="part-scans">Original Notes (scanned)</h2>
+      <p class="section-subtitle">Tap any page to enlarge. These pages include all diagrams, tables and full worked solutions.</p>
+      <div class="note-pages"><figure class="note-page" id="page-1"><img src="images/page-01.jpg" loading="lazy" alt="Scanned notes, page 1: 9.1 Scalar and vector / 9.2 Distance and displacement"><figcaption>Notes page 1 · 9.1 Scalar and vector / 9.2 Distance and displacement</figcaption></figure><figure class="note-page" id="page-2"><img src="images/page-02.jpg" loading="lazy" alt="Scanned notes, page 2: 9.3 Speed and velocity / 9.4 Uniform motion / 9.5 Acceleration"><figcaption>Notes page 2 · 9.3 Speed and velocity / 9.4 Uniform motion / 9.5 Acceleration</figcaption></figure><figure class="note-page" id="page-3"><img src="images/page-03.jpg" loading="lazy" alt="Scanned notes, page 3: 9.6 Motion graphs"><figcaption>Notes page 3 · 9.6 Motion graphs</figcaption></figure><figure class="note-page" id="page-4"><img src="images/page-04.jpg" loading="lazy" alt="Scanned notes, page 4: 9.6 Motion graphs"><figcaption>Notes page 4 · 9.6 Motion graphs</figcaption></figure><figure class="note-page" id="page-5"><img src="images/page-05.jpg" loading="lazy" alt="Scanned notes, page 5: 9.7 Equations of uniformly accelerated motion / 9.8 Vertical motion in air"><figcaption>Notes page 5 · 9.7 Equations of uniformly accelerated motion / 9.8 Vertical motion in air</figcaption></figure><figure class="note-page" id="page-6"><img src="images/page-06.jpg" loading="lazy" alt="Scanned notes, page 6: 9.8 Vertical motion in air"><figcaption>Notes page 6 · 9.8 Vertical motion in air</figcaption></figure><figure class="note-page" id="page-7"><img src="images/page-07.jpg" loading="lazy" alt="Scanned notes, page 7: 9.8 Vertical motion in air / 9.9 Devices used for recording motion"><figcaption>Notes page 7 · 9.8 Vertical motion in air / 9.9 Devices used for recording motion</figcaption></figure><figure class="note-page" id="page-8"><img src="images/page-08.jpg" loading="lazy" alt="Scanned notes, page 8: 9.9 Devices used for recording motion"><figcaption>Notes page 8 · 9.9 Devices used for recording motion</figcaption></figure><figure class="note-page" id="page-9"><img src="images/page-09.jpg" loading="lazy" alt="Scanned notes, page 9: Example 1"><figcaption>Notes page 9 · Example 1</figcaption></figure><figure class="note-page" id="page-10"><img src="images/page-10.jpg" loading="lazy" alt="Scanned notes, page 10: Example 2"><figcaption>Notes page 10 · Example 2</figcaption></figure><figure class="note-page" id="page-11"><img src="images/page-11.jpg" loading="lazy" alt="Scanned notes, page 11: Example 3"><figcaption>Notes page 11 · Example 3</figcaption></figure><figure class="note-page" id="page-12"><img src="images/page-12.jpg" loading="lazy" alt="Scanned notes, page 12: Example 4"><figcaption>Notes page 12 · Example 4</figcaption></figure><figure class="note-page" id="page-13"><img src="images/page-13.jpg" loading="lazy" alt="Scanned notes, page 13: Example 5"><figcaption>Notes page 13 · Example 5</figcaption></figure></div>
+    </div>
+  </section>
+  <footer class="site-footer"><div class="container"><p>Keep learning, keep growing.</p></div></footer>
+  <script src="menu-data.js"></script>
+  <script src="menu-builder.js"></script>
+  <script src="menu.js"></script>
+  <script src="site-search.js"></script>
+  <script src="lightbox.js"></script>
+</body>
+</html>

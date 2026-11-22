@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Force and Motion — PhysicsLearn</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Physics<span>Learn</span></a>
+      <div class="skill-search" role="search">
+        <div class="skill-search__field">
+          <svg class="skill-search__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+          <label class="visually-hidden" for="skillSearch">Search topics</label>
+          <input id="skillSearch" type="search" placeholder="Search topics…  (press / )" autocomplete="off" spellcheck="false" aria-describedby="skillSearchStatus">
+          <button id="skillSearchClear" class="skill-search__clear" type="button" hidden aria-label="Clear search">&times;</button>
+          <div id="searchResults" class="search-results" hidden></div>
+        </div>
+        <p id="skillSearchStatus" class="skill-search__status" role="status" aria-live="polite"></p>
+      </div>
+      <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav"><ul class="nav-links" id="main-menu"></ul></nav>
+    </div>
+  </header>
+
+  <section class="skill-page">
+    <div class="container">
+      <h2>Chapter 10: Force and Motion</h2>
+      <p class="section-subtitle">Newton's three laws, forces, free-body diagrams, moments and centre of gravity. Key points are summarised below, followed by worked examples with full solutions and the original scanned notes.</p>
+      <div class="part-nav">
+        <a class="part-btn" href="#part-notes">Revision Notes</a>
+        <a class="part-btn" href="#part-examples">Worked Examples</a>
+        <a class="part-btn" href="#part-scans">Original Notes</a>
+      </div>
+      <h2 class="part-heading" id="part-notes">Revision Notes</h2>
+      <div class="skill-grid">
+      <article class="skill-card" id="s10-1">
+        <h3>10.1 Newton's First Law of motion</h3>
+        <ul class="key-points"><li>An object stays at rest or moves in a straight line at uniform speed if there is no net (unbalanced) force on it. Force is the cause of changes in motion.</li><li>Inertia is the tendency to resist changes in motion and is measured by mass.</li></ul>
+        <p class="notes-link"><a class="see-notes" href="#page-14">View notes p.14</a></p>
+      </article>
+      <article class="skill-card" id="s10-2">
+        <h3>10.2 Forces</h3>
+        <ul class="key-points"><li>Force is a vector measured in newtons (N). Forces add by the tip-to-tail or parallelogram method, or algebraically.</li><li>Two perpendicular forces: F = √(F₁² + F₂²), with tan θ = F₂ ÷ F₁. Resolving a force: Fₓ = F cos θ and Fᵧ = F sin θ.</li><li>Friction opposes velocity and is independent of speed and contact area. Fluid resistance opposes velocity, grows with speed and is smaller for streamlined shapes. Weight is the Earth's pull, always vertically downward. Normal reaction acts perpendicular to the contact surface.</li><li>A free-body diagram shows every force on an object, with arrow direction and length showing direction and magnitude.</li></ul>
+        <p class="notes-link"><a class="see-notes" href="#page-14">View notes p.14</a> <a class="see-notes" href="#page-15">View notes p.15</a> <a class="see-notes" href="#page-16">View notes p.16</a> <a class="see-notes" href="#page-17">View notes p.17</a></p>
+      </article>
+      <article class="skill-card" id="s10-3">
+        <h3>10.3 Newton's Second Law of motion</h3>
+        <ul class="key-points"><li>A net force makes an object accelerate in the direction of that force. The acceleration is proportional to the net force and inversely proportional to mass: F = ma.</li><li>On a horizontal surface, normal reaction cancels weight (R = mg). On an incline, resolve weight into mg sin θ along the plane and mg cos θ perpendicular to it (R = mg cos θ).</li></ul>
+        <p class="notes-link"><a class="see-notes" href="#page-17">View notes p.17</a> <a class="see-notes" href="#page-18">View notes p.18</a></p>
+      </article>
+      <article class="skill-card" id="s10-4">
+        <h3>10.4 Newton's Third Law of motion</h3>
+        <ul class="key-points"><li>For every action there is an equal and opposite reaction. If A exerts a force on B, B exerts a force of equal magnitude and opposite direction on A.</li><li>Action and reaction act on different objects, e.g. Earth and object, ground and object, tension between blocks, rocket and exhaust gas.</li></ul>
+        <p class="notes-link"><a class="see-notes" href="#page-19">View notes p.19</a></p>
+      </article>
+      <article class="skill-card" id="s10-5">
+        <h3>10.5 Moment of a force</h3>
+        <ul class="key-points"><li>Moment of a force about a point = perpendicular component of force × distance = F sin θ × r (unit: N m). It measures the turning effect.</li><li>A couple is two equal and opposite forces: zero resultant force but a turning effect Fd. Torque is the net moment of a couple.</li><li>An object is in equilibrium when the net force is zero and total clockwise moment = total anticlockwise moment.</li></ul>
+        <p class="notes-link"><a class="see-notes" href="#page-20">View notes p.20</a></p>
+      </article>
+      <article class="skill-card" id="s10-6">
+        <h3>10.6 Centre of gravity</h3>
+        <ul class="key-points"><li>The centre of gravity is the point where all the weight can be considered to act. For point masses: x_cg = (m₁x₁ + m₂x₂ + …) ÷ (m₁ + m₂ + …).</li><li>A uniform rod has its centre of gravity at its mid-point. An object made of two uniform parts can be treated as two point masses.</li></ul>
+        <p class="notes-link"><a class="see-notes" href="#page-21">View notes p.21</a></p>
+      </article>
+      </div>
+      <h2 class="part-heading" id="part-examples">Worked Examples</h2>
+      <div class="skill-grid">
+      <article class="skill-card example-card" id="ex1">
+        <h3>Example 1: Resultant of two forces</h3>
+        <p>A block is pulled by two forces F₁ and F₂ (Fig. 10.11). F₁ = 5 N acts 63° above the x-axis and F₂ = 11 N acts 47° below it. Find the magnitude of the resultant force.</p><p>A. 10.4 N     B. 11.8 N     C. 12.3 N     D. 14.2 N</p><p class="example-answer"><strong>Answer: A</strong></p><h4>Method 1: General approach</h4><div class="math-block"><span class="math-line">Resolve each force, then add the components.</span><span class="math-line">Fₓ = F₁ₓ + F₂ₓ = (5)(cos 63°) + (11)(cos 47°) = 9.77</span><span class="math-line">Fᵧ = F₁ᵧ + F₂ᵧ = (5)(sin 63°) − (11)(sin 47°) = −3.59</span><span class="math-line">F = √(Fₓ² + Fᵧ²) = √[(9.77)² + (−3.59)²] = 10.4 N</span></div><h4>Method 2: Problem solving by drawing</h4><div class="math-block"><span class="math-line">Forces that are neither parallel nor perpendicular: shift one force so the two forces and the resultant form a triangle, then use the cosine law.</span><span class="math-line">θ = 180° − (63° + 47°) = 70°</span><span class="math-line">F = √(F₁² + F₂² − 2F₁F₂ cos θ) = √[(5)² + (11)² − 2(5)(11)cos 70°] = 10.4 N</span></div>
+        <p class="notes-link"><a class="see-notes" href="#page-22">Original solution p.22</a></p>
+      </article>
+      <article class="skill-card example-card" id="ex2">
+        <h3>Example 2: Free-body diagram in equilibrium</h3>
+        <p>A block is tied to the end of a string with tension T₁ (Fig. 10.12). It is kept in equilibrium by another string of tension T₂ and an applied force F. Which diagram best shows the forces acting on the block?</p><p>Options A to D are force diagrams; see the original page 23.</p><p class="example-answer"><strong>Answer: C</strong></p><h4>Solution: Problem solving by drawing</h4><div class="math-block"><span class="math-line">The block is in equilibrium, so the net force on it is zero.</span><span class="math-line">When the resultant of forces is zero, the vectors representing them form a closed polygon after shifting. The vectors in C can be shifted to form a triangle.</span><span class="math-line">Hence C best shows the forces acting on the block.</span></div>
+        <p class="notes-link"><a class="see-notes" href="#page-23">Original solution p.23</a></p>
+      </article>
+      <article class="skill-card example-card" id="ex3">
+        <h3>Example 3: Centre of gravity of a composite block</h3>
+        <p>A composite block consists of two identical blocks, X and Y, placed on the edge of a table (Fig. 10.13). What is the maximum value of z overhanging the table so that the composite block is still in equilibrium?</p><p>A. 2 cm     B. 7 cm     C. 14 cm     D. 23 cm</p><p class="example-answer"><strong>Answer: B</strong></p><h4>Solution: Symmetric analysis</h4><div class="math-block"><span class="math-line">By symmetry, the centre of gravity of the composite block is mid-way between P and Q, i.e. 7 cm from Q.</span><span class="math-line">The maximum value of z is therefore 7 cm.</span></div>
+        <p class="notes-link"><a class="see-notes" href="#page-23">Original solution p.23</a> <a class="see-notes" href="#page-24">Original solution p.24</a></p>
+      </article>
+      <article class="skill-card example-card" id="ex4">
+        <h3>Example 4: Triangular disc</h3>
+        <p>A uniform disc has the shape of an equilateral triangle (Fig. 10.14) with its base from x = −2 to x = 2 and its apex on the y-axis. Find the coordinates of its centre of gravity.</p><p>A. (0, 1/√3)     B. (1/3, 1/√3)     C. (0, 2/√3)     D. (1/√3, 1/3)</p><p class="example-answer"><strong>Answer: C</strong></p><h4>Solution: Symmetric analysis</h4><div class="math-block"><span class="math-line">By reflection symmetry about the y-axis, the x-coordinate of the centre of gravity is 0.</span><span class="math-line">The centre of gravity G of an equilateral triangle is equidistant from all three vertices, so ΔGQP ≅ ΔGQR and ∠GQP = ∠GQR.</span><span class="math-line">OG = 2 tan 30° = 2/√3</span><span class="math-line">The coordinates of the centre of gravity are (0, 2/√3).</span></div>
+        <p class="notes-link"><a class="see-notes" href="#page-24">Original solution p.24</a></p>
+      </article>
+      <article class="skill-card example-card" id="ex5">
+        <h3>Example 5: Two blocks pulled on a table</h3>
+        <p>Two blocks of masses 2 kg and 3 kg are tied together on a table and pulled by a horizontal force of 15 N acting on the 2 kg block (Fig. 10.15). Find the acceleration of the system and the tension in the string if</p><p>(a) the table is smooth, (4 marks)</p><p>(b) the friction between the table and each block is 2 N. (4 marks)</p><h4>Solution (a)</h4><div class="math-block"><span class="math-line">3 kg block:   T = 3a ......(1)</span><span class="math-line">2 kg block:   15 − T = 2a ......(2)</span><span class="math-line">Solving (1) and (2):   T = 9 N,   a = 3 m s⁻²</span></div><h4>Solution (b)</h4><div class="math-block"><span class="math-line">3 kg block:   T − 2 = 3a ......(3)</span><span class="math-line">2 kg block:   15 − T − 2 = 2a ......(4)</span><span class="math-line">Solving (3) and (4):   T = 8.6 N,   a = 2.2 m s⁻²</span><span class="math-line">Note: a free-body diagram helps you find the net force and the acceleration of each object.</span></div>
+        <p class="notes-link"><a class="see-notes" href="#page-25">Original solution p.25</a></p>
+      </article>
+      <article class="skill-card example-card" id="ex6">
+        <h3>Example 6: Mass hung from two strings</h3>
+        <p>An object of mass 10 kg is suspended by two strings making 60° and 30° with the ceiling (Fig. 10.16).</p><p>(a) Draw a free-body diagram for the object. (2 marks)</p><p>(b) Find the tension in each string. (4 marks)</p><h4>Solution</h4><div class="math-block"><span class="math-line">(a) Three forces act on the object: tension T₁, tension T₂ and weight mg (drawn downward).</span><span class="math-line">(b) Resolve the forces horizontally and vertically:</span><span class="math-line">T₁ sin 30° = T₂ sin 60° ......(1)</span><span class="math-line">T₁ cos 30° + T₂ cos 60° = 10 × 9.81 ......(2)</span><span class="math-line">Solving (1) and (2):   T₁ = 85.0 N,   T₂ = 49.1 N</span></div>
+        <p class="notes-link"><a class="see-notes" href="#page-26">Original solution p.26</a></p>
+      </article>
+      <article class="skill-card example-card" id="ex7">
+        <h3>Example 7: Pivoted rod in equilibrium</h3>
+        <p>AB is a uniform light rod pivoted at O, its mid-point, and is in equilibrium (Fig. 10.17). Forces: 12 N down at A, 3 N down 20 cm from O on the A side, 5 N up 30 cm from O on the B side, and F down at B. AB is 100 cm long.</p><p>(a) Find the magnitude of the force F. (4 marks)</p><p>(b) Find the magnitude of the reaction R at O. (4 marks)</p><h4>Solution (a): take moments about O</h4><div class="math-block"><span class="math-line">Anti-clockwise moment = (12)(0.4) + (3)(0.2) + (5)(0.3) = 6.9 N m</span><span class="math-line">Clockwise moment = 0.5F</span><span class="math-line">The rod is in equilibrium, so the net moment is zero:   0.5F = 6.9,   F = 13.8 N</span></div><h4>Solution (b): take moments about B</h4><div class="math-block"><span class="math-line">Anti-clockwise moments = (12)(0.9) + (3)(0.7) = 12.9 N m</span><span class="math-line">Clockwise moments = (5)(0.2) + 0.5R = 1 + 0.5R</span><span class="math-line">1 + 0.5R = 12.9,   R = 23.8 N</span><span class="math-line">Check: upward forces = 23.8 + 5 = 28.8 N; downward forces = 12 + 3 + 13.8 = 28.8 N.</span></div>
+        <p class="notes-link"><a class="see-notes" href="#page-27">Original solution p.27</a></p>
+      </article>
+      <article class="skill-card example-card" id="ex8">
+        <h3>Example 8: Rod supported by two strings</h3>
+        <p>A uniform rod AB of weight 100 N and length 2 m is suspended by two vertical strings at its ends and carries a load of 20 kg, 0.5 m from A. Determine the tension in each string. (6 marks)</p><h4>Solution</h4><div class="math-block"><span class="math-line">Let T_A and T_B be the tensions in the strings at A and B. Take moments about B.</span><span class="math-line">Anti-clockwise moment = (100)(1) + (20 × 9.81)(1.5) = 394.3 N m</span><span class="math-line">Clockwise moment = 2T_A</span><span class="math-line">The rod is in equilibrium, so 2T_A = 394.3 and T_A = 197.15 N.</span><span class="math-line">T_A + T_B = weight of rod + load = 100 + (20)(9.81),   so T_B = 99.05 N</span></div>
+        <p class="notes-link"><a class="see-notes" href="#page-28">Original solution p.28</a></p>
+      </article>
+      </div>
+      <h2 class="part-heading" id="part-scans">Original Notes (scanned)</h2>
+      <p class="section-subtitle">Tap any page to enlarge. These pages include all diagrams, tables and full worked solutions.</p>
+      <div class="note-pages"><figure class="note-page" id="page-14"><img src="images/page-14.jpg" loading="lazy" alt="Scanned notes, page 14: 10.1 Newton's First Law of motion / 10.2 Forces"><figcaption>Notes page 14 · 10.1 Newton's First Law of motion / 10.2 Forces</figcaption></figure><figure class="note-page" id="page-15"><img src="images/page-15.jpg" loading="lazy" alt="Scanned notes, page 15: 10.2 Forces"><figcaption>Notes page 15 · 10.2 Forces</figcaption></figure><figure class="note-page" id="page-16"><img src="images/page-16.jpg" loading="lazy" alt="Scanned notes, page 16: 10.2 Forces"><figcaption>Notes page 16 · 10.2 Forces</figcaption></figure><figure class="note-page" id="page-17"><img src="images/page-17.jpg" loading="lazy" alt="Scanned notes, page 17: 10.2 Forces / 10.3 Newton's Second Law of motion"><figcaption>Notes page 17 · 10.2 Forces / 10.3 Newton's Second Law of motion</figcaption></figure><figure class="note-page" id="page-18"><img src="images/page-18.jpg" loading="lazy" alt="Scanned notes, page 18: 10.3 Newton's Second Law of motion"><figcaption>Notes page 18 · 10.3 Newton's Second Law of motion</figcaption></figure><figure class="note-page" id="page-19"><img src="images/page-19.jpg" loading="lazy" alt="Scanned notes, page 19: 10.4 Newton's Third Law of motion"><figcaption>Notes page 19 · 10.4 Newton's Third Law of motion</figcaption></figure><figure class="note-page" id="page-20"><img src="images/page-20.jpg" loading="lazy" alt="Scanned notes, page 20: 10.5 Moment of a force"><figcaption>Notes page 20 · 10.5 Moment of a force</figcaption></figure><figure class="note-page" id="page-21"><img src="images/page-21.jpg" loading="lazy" alt="Scanned notes, page 21: 10.6 Centre of gravity"><figcaption>Notes page 21 · 10.6 Centre of gravity</figcaption></figure><figure class="note-page" id="page-22"><img src="images/page-22.jpg" loading="lazy" alt="Scanned notes, page 22: Example 1"><figcaption>Notes page 22 · Example 1</figcaption></figure><figure class="note-page" id="page-23"><img src="images/page-23.jpg" loading="lazy" alt="Scanned notes, page 23: Example 2, Example 3"><figcaption>Notes page 23 · Example 2, Example 3</figcaption></figure><figure class="note-page" id="page-24"><img src="images/page-24.jpg" loading="lazy" alt="Scanned notes, page 24: Example 3, Example 4"><figcaption>Notes page 24 · Example 3, Example 4</figcaption></figure><figure class="note-page" id="page-25"><img src="images/page-25.jpg" loading="lazy" alt="Scanned notes, page 25: Example 5"><figcaption>Notes page 25 · Example 5</figcaption></figure><figure class="note-page" id="page-26"><img src="images/page-26.jpg" loading="lazy" alt="Scanned notes, page 26: Example 6"><figcaption>Notes page 26 · Example 6</figcaption></figure><figure class="note-page" id="page-27"><img src="images/page-27.jpg" loading="lazy" alt="Scanned notes, page 27: Example 7"><figcaption>Notes page 27 · Example 7</figcaption></figure><figure class="note-page" id="page-28"><img src="images/page-28.jpg" loading="lazy" alt="Scanned notes, page 28: Example 8"><figcaption>Notes page 28 · Example 8</figcaption></figure></div>
+    </div>
+  </section>
+  <footer class="site-footer"><div class="container"><p>Keep learning, keep growing.</p></div></footer>
+  <script src="menu-data.js"></script>
+  <script src="menu-builder.js"></script>
+  <script src="menu.js"></script>
+  <script src="site-search.js"></script>
+  <script src="lightbox.js"></script>
+</body>
+</html>

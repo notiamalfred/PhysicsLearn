@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glossary — PhysicsLearn</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Physics<span>Learn</span></a>
+      <div class="skill-search" role="search">
+        <div class="skill-search__field">
+          <svg class="skill-search__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+          <label class="visually-hidden" for="skillSearch">Search topics</label>
+          <input id="skillSearch" type="search" placeholder="Search topics…  (press / )" autocomplete="off" spellcheck="false" aria-describedby="skillSearchStatus">
+          <button id="skillSearchClear" class="skill-search__clear" type="button" hidden aria-label="Clear search">&times;</button>
+          <div id="searchResults" class="search-results" hidden></div>
+        </div>
+        <p id="skillSearchStatus" class="skill-search__status" role="status" aria-live="polite"></p>
+      </div>
+      <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav"><ul class="nav-links" id="main-menu"></ul></nav>
+    </div>
+  </header>
+
+  <section class="skill-page">
+    <div class="container">
+      <h2>Glossary</h2>
+      <p class="section-subtitle">Key definitions from the notes in one place.</p>
+      <div class="skill-grid" id="glossary-list">
+      <article class="skill-card" id="scalar">
+        <h3>Scalar</h3>
+        <p>A quantity with magnitude only, e.g. distance, speed, mass, density.</p>
+      </article>
+      <article class="skill-card" id="vector">
+        <h3>Vector</h3>
+        <p>A quantity with both magnitude and direction, e.g. displacement, velocity, acceleration, force.</p>
+      </article>
+      <article class="skill-card" id="resultant">
+        <h3>Resultant</h3>
+        <p>The single vector produced when two or more vectors are added.</p>
+      </article>
+      <article class="skill-card" id="distance">
+        <h3>Distance</h3>
+        <p>The length of the path taken by an object. It is a scalar.</p>
+      </article>
+      <article class="skill-card" id="displacement">
+        <h3>Displacement</h3>
+        <p>The shortest distance from the starting position to the final position. It is a vector and is independent of the path.</p>
+      </article>
+      <article class="skill-card" id="speed">
+        <h3>Speed</h3>
+        <p>Distance travelled per unit time.</p>
+      </article>
+      <article class="skill-card" id="velocity">
+        <h3>Velocity</h3>
+        <p>Displacement per unit time; it tells how fast and in which direction an object moves.</p>
+      </article>
+      <article class="skill-card" id="uniform-motion">
+        <h3>Uniform motion</h3>
+        <p>Motion with constant velocity: speed and direction both stay unchanged.</p>
+      </article>
+      <article class="skill-card" id="acceleration">
+        <h3>Acceleration</h3>
+        <p>The rate of change of velocity, a = (v − u) ÷ t. Unit: m s⁻².</p>
+      </article>
+      <article class="skill-card" id="g">
+        <h3>Acceleration due to gravity (g)</h3>
+        <p>The constant acceleration of an object under gravity only, about 9.81 m s⁻² towards the Earth.</p>
+      </article>
+      <article class="skill-card" id="air-resistance">
+        <h3>Air resistance</h3>
+        <p>The force exerted by the air that opposes the motion of a moving object. It increases with speed.</p>
+      </article>
+      <article class="skill-card" id="terminal-velocity">
+        <h3>Terminal velocity</h3>
+        <p>The constant velocity reached when the weight of a falling object is balanced by air resistance.</p>
+      </article>
+      <article class="skill-card" id="data-logging">
+        <h3>Data-logging system</h3>
+        <p>A system of sensors, an interface and computer software that records time-varying data and shows it as graphs and tables.</p>
+      </article>
+      <article class="skill-card" id="stroboscopy">
+        <h3>Stroboscopy</h3>
+        <p>A method of capturing images of fast-moving objects using intense flashes at an adjustable frequency.</p>
+      </article>
+      <article class="skill-card" id="force">
+        <h3>Force</h3>
+        <p>A vector measured in newtons (N). An unbalanced force changes an object's speed and/or direction.</p>
+      </article>
+      <article class="skill-card" id="net-force">
+        <h3>Net force</h3>
+        <p>The resultant of all forces acting on an object; also called the unbalanced force.</p>
+      </article>
+      <article class="skill-card" id="inertia">
+        <h3>Inertia</h3>
+        <p>The tendency of an object to resist changes in its state of motion. It is measured by mass.</p>
+      </article>
+      <article class="skill-card" id="friction">
+        <h3>Friction</h3>
+        <p>A force opposite to the direction of motion, independent of speed and of the area in contact.</p>
+      </article>
+      <article class="skill-card" id="weight">
+        <h3>Weight</h3>
+        <p>The force exerted on an object by the Earth, always directed vertically downward.</p>
+      </article>
+      <article class="skill-card" id="normal-reaction">
+        <h3>Normal reaction</h3>
+        <p>The force perpendicular to the contact surface when two objects press against each other.</p>
+      </article>
+      <article class="skill-card" id="free-body-diagram">
+        <h3>Free-body diagram</h3>
+        <p>A diagram showing all the forces acting on one object, drawn as arrows.</p>
+      </article>
+      <article class="skill-card" id="moment">
+        <h3>Moment of a force</h3>
+        <p>The turning effect of a force about a point: perpendicular component of the force × distance from the point (N m).</p>
+      </article>
+      <article class="skill-card" id="couple">
+        <h3>Couple</h3>
+        <p>Two equal forces acting in opposite directions. The resultant force is zero but there is a turning effect.</p>
+      </article>
+      <article class="skill-card" id="torque">
+        <h3>Torque</h3>
+        <p>The net moment of force produced by a couple.</p>
+      </article>
+      <article class="skill-card" id="equilibrium">
+        <h3>Equilibrium</h3>
+        <p>A state with no translational or rotational acceleration: zero net force and balanced clockwise and anticlockwise moments.</p>
+      </article>
+      <article class="skill-card" id="centre-of-gravity">
+        <h3>Centre of gravity</h3>
+        <p>The point where all the weight of an object can be considered to be concentrated.</p>
+      </article>
+      </div>
+    </div>
+  </section>
+  <footer class="site-footer"><div class="container"><p>Keep learning, keep growing.</p></div></footer>
+  <script src="menu-data.js"></script>
+  <script src="menu-builder.js"></script>
+  <script src="menu.js"></script>
+  <script src="site-search.js"></script>
+</body>
+</html>
