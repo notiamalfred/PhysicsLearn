@@ -4,7 +4,12 @@
   "use strict";
 
   /* Your Cloudflare Worker URL for this site. */
-  var WORKER_URL = "https://physicslearn.hohimsmp.workers.dev"; /* paste your deployed Cloudflare Worker URL here */
+  var WORKER_URL = ""; /* optional: your deployed Cloudflare Worker URL */
+
+  /* Public GitHub repo to read commits from. Used directly when WORKER_URL is empty or the worker
+     fails (e.g. "Bad credentials"). Works for public repos with no token (60 requests/hour/visitor). */
+  var GITHUB_REPO = "notiamalfred/PhysicsLearn";
+  var GITHUB_API = "https://api.github.com/repos/" + GITHUB_REPO + "/commits?per_page=30";
 
   var MAX_COMMITS = 10;
 
@@ -73,31 +78,35 @@
     });
   }
 
-  if (!WORKER_URL) {
-    container.innerHTML = "<p>Updates will appear here once the update-log worker is connected.</p>";
-    return;
+  function getJson(url) {
+    return fetch(url, { headers: { "Accept": "application/vnd.github+json" } })
+      .then(function (response) {
+        return response.json().then(function (data) {
+          /* GitHub (or the worker) returns an object such as {"message": "Bad credentials"}
+             instead of an array when something is wrong. Treat that as an error. */
+          if (!response.ok || !Array.isArray(data)) {
+            throw new Error((data && data.message) || ("Request failed with status " + response.status));
+          }
+          return data;
+        });
+      });
   }
 
   container.innerHTML = "<p>Loading recent updates...</p>";
 
-  fetch(WORKER_URL)
-    .then(function (response) {
-      if (!response.ok) {
-        throw new Error("Worker request failed with status " + response.status);
-      }
-      return response.json();
-    })
-    .then(function (data) {
-      /* GitHub returns an object such as {"message": "Not Found"} instead of an array when the
-         repo name is wrong or the token is missing/invalid. Treat that as an error, not as commits. */
-      if (!Array.isArray(data)) {
-        throw new Error((data && data.message) || "Unexpected response from the update-log worker");
-      }
-      renderCommits(data);
-    })
+  /* Try the worker first (if configured), then fall back to GitHub's public API directly. */
+  var attempt = WORKER_URL
+    ? getJson(WORKER_URL).catch(function (workerError) {
+        console.warn("Update-log worker failed (" + workerError.message + "); trying GitHub directly.");
+        return getJson(GITHUB_API);
+      })
+    : getJson(GITHUB_API);
+
+  attempt
+    .then(renderCommits)
     .catch(function (error) {
       console.error("Error fetching commits:", error);
       container.innerHTML =
-        '<p>Could not load updates at this time. Please try again later.</p>';
+        "<p>Could not load updates at this time. Please try again later.</p>";
     });
 })();
