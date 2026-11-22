@@ -4,7 +4,7 @@
   "use strict";
 
   /* Your Cloudflare Worker URL for this site. */
-  var WORKER_URL = ""; /* paste your deployed Cloudflare Worker URL here */
+  var WORKER_URL = "https://physicslearn.hohimsmp.workers.dev"; /* paste your deployed Cloudflare Worker URL here */
 
   var MAX_COMMITS = 10;
 
