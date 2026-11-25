@@ -48,8 +48,15 @@
                 <span id="save-label">Save my progress in this set</span>
               </label>
               <p class="ml-hint ml-savehint" id="save-status" role="status" aria-live="polite"></p>
+              <div class="pl-genbox" id="gen-box" hidden>
+                <label class="ml-check">
+                  <input type="checkbox" id="gen-toggle" />
+                  <span>Generate new numbers <span class="pl-gen-count" id="gen-count"></span></span>
+                </label>
+                <p class="ml-hint" id="gen-hint">Numerical questions are rebuilt with new numbers, and the answer and worked solution are recalculated. Other questions stay exactly as in the book.</p>
+              </div>
               <article class="ml-qcard">
-                <span class="ml-level" id="level"></span>
+                <span class="ml-level" id="level"></span> <span class="pl-gen-badge" id="gen-badge" hidden>↻ New numbers</span>
                 <div class="pl-context" id="context" hidden></div>
                 <div class="pl-question" id="question"></div>
                 <div class="pl-options" id="options" hidden></div>
@@ -66,6 +73,7 @@
                 <button type="button" class="ml-btn" id="prev">← Previous</button>
                 <button type="button" class="ml-btn ml-btn--primary" id="toggle-answer" aria-expanded="false">Show answer</button>
                 <button type="button" class="ml-btn" id="next">Next →</button>
+                <button type="button" class="ml-btn pl-regen" id="regen" hidden>↻ Another version</button>
               </div>
             </div>
             <div class="ml-done" id="done" hidden>
@@ -95,6 +103,7 @@
   <script src="auth.js"></script>
   <script src="menu.js"></script>
   <script src="question-data.js"></script>
+  <script src="question-generator.js"></script>
   <script src="questions.js"></script>
 </body>
 </html>

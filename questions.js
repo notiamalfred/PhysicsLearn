@@ -18,10 +18,13 @@
     level: $("level"), context: $("context"), question: $("question"), options: $("options"), feedback: $("feedback"),
     answer: $("answer"), answerRow: $("answer-row"), answerText: $("answer-text"), stepsLabel: $("steps-label"), stepsText: $("steps-text"),
     prev: $("prev"), next: $("next"), toggleAnswer: $("toggle-answer"),
+    genBox: $("gen-box"), genToggle: $("gen-toggle"), genCount: $("gen-count"), genBadge: $("gen-badge"), regen: $("regen"),
     done: $("done"), doneTitle: $("done-title"), doneText: $("done-text"), restart: $("restart"),
     signOut: $("signout"), who: $("user"),
   };
-  const state = { userId: null, chapter: null, set: null, type: null, list: [], index: 0, revealed: false, picked: null, saved: false, key: "", token: 0 };
+  const GEN = window.QuestionGenerator || null;
+  const GEN_KEY = "physicslearn-generator";
+  const state = { gen: false, cache: {}, userId: null, chapter: null, set: null, type: null, list: [], index: 0, revealed: false, picked: null, saved: false, key: "", token: 0 };
 
   // ---------- text formatting (same mini-markup used when the questions were typed) ----------
   function esc(t) { return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
@@ -171,19 +174,37 @@
       state.saved = true;
     } else state.list = shuffle(questions);
     els.saveBox.checked = state.saved; els.saveBox.disabled = !!problem;
+    setupGenerator();
     els.quizBody.hidden = false;
     renderQuestion(); setSaveHint(problem);
     if (state.saved && state.index > 0) els.saveStatus.textContent = "Welcome back. You're continuing from where you stopped, in your saved order.";
   }
 
+  // ---------- generated variants ----------
+  const base = () => state.list[state.index];
+  function cur() {
+    const q = base();
+    if (state.gen && GEN && GEN.has(q.id)) { if (!state.cache[q.id]) state.cache[q.id] = GEN.generate(q) || q; return state.cache[q.id]; }
+    return q;
+  }
+  const isGenerated = () => cur() !== base();
+  function setupGenerator() {
+    const n = GEN ? state.list.filter((q) => GEN.has(q.id)).length : 0;
+    els.genBox.hidden = !n;
+    els.genCount.textContent = n ? "(" + n + " of " + state.list.length + " questions here)" : "";
+    try { state.gen = !!n && localStorage.getItem(GEN_KEY) === "1"; } catch (e) { state.gen = false; }
+    state.cache = {}; els.genToggle.checked = state.gen;
+  }
+
   // ---------- one question ----------
   const LETTERS = ["A", "B", "C", "D", "E"];
   function renderQuestion() {
-    const q = state.list[state.index], n = state.list.length;
+    const q = cur(), n = state.list.length;
     state.revealed = false; state.picked = null;
     els.progress.textContent = "Question " + (state.index + 1) + " of " + n;
     els.bar.style.width = ((state.index + 1) / n * 100) + "%";
     els.level.textContent = DATA[state.chapter].sets[state.set].label + " · " + q.type;
+    els.genBadge.hidden = !isGenerated(); els.regen.hidden = !isGenerated();
 
     els.context.textContent = ""; els.context.hidden = !q.context;
     if (q.context) { if (q.context.label) els.context.appendChild(el("p", "pl-context-label", fmt(q.context.label))); renderBlocks(els.context, q.context.blocks); }
@@ -212,7 +233,7 @@
   }
   function pick(letter) {
     if (state.picked) return;
-    const q = state.list[state.index]; if (!q.answer) return;
+    const q = cur(); if (!q.answer) return;
     state.picked = letter;
     const ok = letter === q.answer;
     els.options.querySelectorAll(".pl-opt").forEach((b) => { b.disabled = true; if (b.dataset.letter === letter) b.classList.add(ok ? "is-correct" : "is-wrong"); });
@@ -221,7 +242,7 @@
     els.feedback.textContent = ok ? "Correct! Tap “Show answer” to see the working." : "Not quite. Tap “Show answer” to see the correct answer and the working.";
   }
   function reveal(show) {
-    const q = state.list[state.index];
+    const q = cur();
     state.revealed = show; els.answer.hidden = !show;
     els.toggleAnswer.textContent = show ? (q.answer ? "Hide answer" : "Hide worked solution") : (q.answer ? "Show answer" : "Show worked solution");
     els.toggleAnswer.setAttribute("aria-expanded", String(show));
@@ -250,7 +271,13 @@
   els.toggleAnswer.addEventListener("click", () => reveal(!state.revealed));
   els.next.addEventListener("click", () => go(1));
   els.prev.addEventListener("click", () => go(-1));
-  els.restart.addEventListener("click", () => { state.list = shuffle(state.list); state.index = 0; els.done.hidden = true; els.quizBody.hidden = false; renderQuestion(); });
+  els.restart.addEventListener("click", () => { state.cache = {}; state.list = shuffle(state.list); state.index = 0; els.done.hidden = true; els.quizBody.hidden = false; renderQuestion(); });
+  els.genToggle.addEventListener("change", () => {
+    state.gen = els.genToggle.checked; state.cache = {};
+    try { localStorage.setItem(GEN_KEY, state.gen ? "1" : "0"); } catch (e) {}
+    renderQuestion();
+  });
+  els.regen.addEventListener("click", () => { delete state.cache[base().id]; renderQuestion(); });
   els.saveBox.addEventListener("change", () => { state.saved = els.saveBox.checked; if (state.saved) persistProgress(); else clearProgress(); setSaveHint(); });
   const backToTypes = () => chooseSet(state.set, true);
   const backToSets = () => chooseChapter(state.chapter, true);
