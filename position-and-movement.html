@@ -244,9 +244,9 @@
 </article>
       </div>
       <details class="scan-details" id="part-scans">
-        <summary>Original scanned pages (for reference)</summary>
-        <p class="section-subtitle">Tap any page to enlarge.</p>
-        <div class="note-pages"><figure class="note-page" id="page-1"><img src="images/page-01.jpg" loading="lazy" alt="Scanned notes, page 1: Scanned notes, page 1"><figcaption>Notes page 1 · Scanned notes, page 1</figcaption></figure><figure class="note-page" id="page-2"><img src="images/page-02.jpg" loading="lazy" alt="Scanned notes, page 2: Scanned notes, page 2"><figcaption>Notes page 2 · Scanned notes, page 2</figcaption></figure><figure class="note-page" id="page-3"><img src="images/page-03.jpg" loading="lazy" alt="Scanned notes, page 3: Scanned notes, page 3"><figcaption>Notes page 3 · Scanned notes, page 3</figcaption></figure><figure class="note-page" id="page-4"><img src="images/page-04.jpg" loading="lazy" alt="Scanned notes, page 4: Scanned notes, page 4"><figcaption>Notes page 4 · Scanned notes, page 4</figcaption></figure><figure class="note-page" id="page-5"><img src="images/page-05.jpg" loading="lazy" alt="Scanned notes, page 5: Scanned notes, page 5"><figcaption>Notes page 5 · Scanned notes, page 5</figcaption></figure><figure class="note-page" id="page-6"><img src="images/page-06.jpg" loading="lazy" alt="Scanned notes, page 6: Scanned notes, page 6"><figcaption>Notes page 6 · Scanned notes, page 6</figcaption></figure><figure class="note-page" id="page-7"><img src="images/page-07.jpg" loading="lazy" alt="Scanned notes, page 7: Scanned notes, page 7"><figcaption>Notes page 7 · Scanned notes, page 7</figcaption></figure><figure class="note-page" id="page-8"><img src="images/page-08.jpg" loading="lazy" alt="Scanned notes, page 8: Scanned notes, page 8"><figcaption>Notes page 8 · Scanned notes, page 8</figcaption></figure><figure class="note-page" id="page-9"><img src="images/page-09.jpg" loading="lazy" alt="Scanned notes, page 9: Scanned notes, page 9"><figcaption>Notes page 9 · Scanned notes, page 9</figcaption></figure><figure class="note-page" id="page-10"><img src="images/page-10.jpg" loading="lazy" alt="Scanned notes, page 10: Scanned notes, page 10"><figcaption>Notes page 10 · Scanned notes, page 10</figcaption></figure><figure class="note-page" id="page-11"><img src="images/page-11.jpg" loading="lazy" alt="Scanned notes, page 11: Scanned notes, page 11"><figcaption>Notes page 11 · Scanned notes, page 11</figcaption></figure><figure class="note-page" id="page-12"><img src="images/page-12.jpg" loading="lazy" alt="Scanned notes, page 12: Scanned notes, page 12"><figcaption>Notes page 12 · Scanned notes, page 12</figcaption></figure><figure class="note-page" id="page-13"><img src="images/page-13.jpg" loading="lazy" alt="Scanned notes, page 13: Scanned notes, page 13"><figcaption>Notes page 13 · Scanned notes, page 13</figcaption></figure></div>
+        <summary>Original scanned pages (sign in to view)</summary>
+        <p class="section-subtitle" id="scan-status">The original scanned pages are only available to signed-in students.</p>
+        <div class="note-pages" id="scan-pages" data-first="1" data-last="13"></div>
       </details>
     </div>
   </section>
@@ -256,5 +256,9 @@
   <script src="menu.js"></script>
   <script src="site-search.js"></script>
   <script src="lightbox.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="auth.js"></script>
+  <script src="scans.js"></script>
 </body>
 </html>

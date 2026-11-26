@@ -947,3 +947,46 @@ body.lightbox-open { overflow: hidden; }
 .scan-details summary { cursor: pointer; font-weight: 700; color: #0b4a54; padding: 10px 0; }
 .note-fig img { width: auto; max-width: min(100%, 640px); }
 .note-section .math-line { font-size: 1.1rem; }
+
+/* ---------- Wide tables on phones: scroll sideways instead of crushing the columns ---------- */
+.note-table, .note-table th, .note-table td,
+.pl-table, .pl-table th, .pl-table td { word-break: normal; overflow-wrap: normal; hyphens: manual; }
+.note-table { width: auto; min-width: 100%; }
+.note-table th, .note-table td { min-width: 150px; }
+.note-table th:first-child, .note-table td:first-child { min-width: 120px; }
+.table-wrap {
+  overflow-x: auto; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain;
+  /* soft edge shadows that appear only while there is more to scroll */
+  background:
+    linear-gradient(to right, #fff 30%, rgba(255, 255, 255, 0)) left center / 28px 100% no-repeat local,
+    linear-gradient(to left, #fff 30%, rgba(255, 255, 255, 0)) right center / 28px 100% no-repeat local,
+    radial-gradient(farthest-side at 0 50%, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0)) left center / 12px 100% no-repeat scroll,
+    radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0)) right center / 12px 100% no-repeat scroll;
+}
+.table-hint { display: none; margin: 10px 0 -4px; font-size: 0.85rem; color: #4a5568; text-align: center; }
+.table-hint.is-on { display: block; }
+
+/* ---------- Back-to-top button ---------- */
+.to-top {
+  position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 900;
+  width: 46px; height: 46px; border: 0; border-radius: 50%; cursor: pointer;
+  background: #0e7c86; color: #fff; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transform: translateY(12px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+.to-top.is-visible { opacity: 1; visibility: visible; transform: none; }
+.to-top:hover, .to-top:focus-visible { background: #0b4a54; }
+.to-top:focus-visible { outline: 3px solid #fbd34d; outline-offset: 2px; }
+.to-top svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+body.menu-open .to-top, body.lightbox-open .to-top { display: none; }
+
+/* ---------- Mobile menu: long menus scroll inside the panel, so the bottom links stay reachable ---------- */
+@media (max-width: 768px) {
+  body.menu-open { overflow: hidden; }
+  .header-inner .nav.nav-open {
+    max-height: calc(100vh - 150px); max-height: calc(100dvh - 150px); /* fallback; menu.js sets the exact height */
+    overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain;
+    padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  }
+}

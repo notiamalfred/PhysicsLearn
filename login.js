@@ -2,7 +2,10 @@
 (function () {
   "use strict";
 
-  const NEXT_PAGE = "questions.html"; // where users land after signing in
+  const NEXT_PAGE = (function () { // where users land after signing in (?next=page.html#section, same-site pages only)
+    const n = new URLSearchParams(location.search).get("next") || "";
+    return /^[a-z0-9-]+\.html(#[a-z0-9-]+)?$/i.test(n) ? n : "questions.html";
+  })();
 
   const $ = (id) => document.getElementById(id);
   const form = $("auth-form");
